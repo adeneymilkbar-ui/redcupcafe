@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Cup Cafe | Specialty Coffee & Kitchen Box Hill</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-[#FAF7F2] text-[#2C2A29] antialiased selection:bg-[#8C6D58] selection:text-white">
+
+  <!-- Floating Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#E6DFD5]/50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-22 flex items-center justify-between py-4">
+      <a href="#" class="flex items-center">
+        <span class="font-serif text-2xl font-bold tracking-tight text-[#2C2A29]">Red Cup Cafe</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide text-[#2C2A29]">
+        <a href="Menu.pdf" target="_blank" class="hover:text-[#8C6D58] transition-colors">Menu</a>
+        <a href="#reservations" class="hover:text-[#8C6D58] transition-colors">Booking</a>
+        <a href="#catering" class="hover:text-[#8C6D58] transition-colors">Catering</a>
+        <a href="#location" class="hover:text-[#8C6D58] transition-colors">Location</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#reservations" class="bg-[#2C2A29] hover:bg-[#8C6D58] text-white px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold transition-all shadow-md">Book Table</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🖼️ 1. Hero Section (Photo 1) -->
+  <section class="relative h-screen w-full flex items-center justify-center pt-20">
+    <div class="absolute inset-0 z-0">
+      <img src="Photo1.jpg" alt="Red Cup Cafe Atmosphere" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30"></div>
+    </div>
+
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <span class="inline-block text-xs uppercase font-semibold tracking-widest text-[#EFE8DC] bg-black/40 backdrop-blur-md px-5 py-2 rounded-full mb-6 border border-white/20">Box Hill • Victoria</span>
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal leading-tight mb-8 drop-shadow-md">
+        Bold flavors,<br /><span class="italic font-light">crafted for Box Hill</span>
+      </h1>
+      <div class="flex flex-wrap justify-center gap-5">
+        <a href="Menu.pdf" target="_blank" class="bg-white text-[#2C2A29] hover:bg-[#FAF7F2] px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:scale-105 inline-flex items-center gap-2">
+          <span>Explore Our Menu (PDF)</span>
+        </a>
+        <a href="#reservations" class="bg-transparent border border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-medium transition-all backdrop-blur-sm">Book a Table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🖼️ 2. Booking Section (Photo 2 在左侧) -->
+  <section id="reservations" class="py-16 sm:py-24 bg-[#FBF9F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- 左侧照片 (Photo 2) -->
+        <div class="lg:col-span-6">
+          <div class="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3]">
+            <img src="Photo2.jpg" alt="Red Cup Cafe Dining" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <span class="text-xs uppercase tracking-widest font-medium opacity-80 block mb-1">Red Cup Vibe</span>
+              <p class="font-serif text-2xl font-light">Your daily coffee ritual & local kitchen</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧 Booking Form -->
+        <div class="lg:col-span-6 bg-white p-8 sm:p-12 rounded-3xl border border-[#E6DFD5] shadow-lg">
+          <span class="text-xs uppercase tracking-widest font-semibold text-[#8C6D58] mb-2 block">Reservations</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#2C2A29] mb-6">Reserve a Table</h2>
+          
+          <form id="bookingForm" class="space-y-4 mb-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-1">Date</label>
+                <input type="date" id="date" name="date" required class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-1">Time</label>
+                <input type="time" id="time" name="time" required class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-1">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-1">Number of Guests</label>
+              <select id="guests" name="guests" class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]">
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 - 4 Guests</option>
+                <option>5 - 8 Guests</option>
+                <option>8+ Guests</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-1">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="04XX XXX XXX" class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-1">Specifics</label>
+              <input type="text" id="specifics" name="specifics" placeholder="Window seat, outdoor, high chair..." class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-1">Dietary / Special Info</label>
+              <textarea id="dietary" name="dietary" rows="2" placeholder="Allergies, birthday celebration, dietary needs..." class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]"></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="w-full bg-[#8C6D58] hover:bg-[#725745] text-white py-4 rounded-xl font-medium transition-all shadow-md">Confirm Reservation Request</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 🖼️ 3. Catering Section (Photo 3 在右侧) -->
+  <section id="catering" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-widest font-semibold text-[#8C6D58] mb-2 block">Events & Catering</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-normal text-[#2C2A29]">Request a Quote</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- 左侧 Catering 表单 -->
+        <div class="lg:col-span-6">
+          <form id="quoteForm" class="space-y-6 bg-[#FBF9F5] p-8 sm:p-12 rounded-3xl border border-[#E6DFD5] shadow-lg">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-2">Your Name</label>
+                <input type="text" id="quoteName" name="name" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-2">Email Address</label>
+                <input type="email" id="quoteEmail" name="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-2">Phone Number</label>
+              <input type="tel" id="quotePhone" name="phone" required placeholder="04XX XXX XXX" class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase text-[#5A524C] mb-2">Event Details & Requirements</label>
+              <textarea id="quoteDetails" name="details" rows="4" placeholder="Tell us about your event, date, guest count, dietary requirements..." class="w-full px-4 py-3 rounded-xl border border-[#D8CFC4] text-sm focus:outline-none focus:border-[#8C6D58]"></textarea>
+            </div>
+
+            <button type="submit" id="quoteSubmitBtn" class="w-full bg-[#2C2A29] hover:bg-[#8C6D58] text-white py-4 rounded-xl font-medium transition-all shadow-md">
+              Submit Quote Request
+            </button>
+          </form>
+        </div>
+
+        <!-- 右侧照片 (Photo 3) -->
+        <div class="lg:col-span-6">
+          <div class="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3]">
+            <img src="Photo3.jpg" alt="Red Cup Catering & Food" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <span class="text-xs uppercase tracking-widest font-medium opacity-80 block mb-1">Freshly Prepared</span>
+              <p class="font-serif text-2xl font-light">Custom catering solutions for your events</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Location Footer (分两行显示) -->
+  <footer id="location" class="bg-[#2C2A29] text-white py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center space-y-4">
+      <h3 class="font-serif text-2xl font-light">Red Cup Cafe</h3>
+      <p class="text-sm text-gray-400 leading-relaxed">
+        1124 Whitehorse Road<br />
+        Box Hill VIC 3128<br />
+        Australia
+      </p>
+      <p class="text-xs text-gray-500 pt-2">© 2026 Red Cup Cafe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 💡 替换为用 redcupcafebh@gmail.com 部署后得到的最新 Apps Script Web App URL
+      const scriptURL = 'YOUR_RED_CUP_APPS_SCRIPT_WEB_APP_URL_HERE';
+      
+      // 1. Table Booking 提交逻辑
+      const bookingForm = document.getElementById('bookingForm');
+      const submitBtn = document.getElementById('submitBtn');
+
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.innerText = 'Submitting...'; }
+
+          const formData = new FormData();
+          formData.append('type', 'booking');
+          formData.append('date', document.getElementById('date').value);
+          formData.append('time', document.getElementById('time').value);
+          formData.append('name', document.getElementById('name').value);
+          formData.append('guests', document.getElementById('guests').value);
+          formData.append('phone', document.getElementById('phone').value);
+          formData.append('specifics', document.getElementById('specifics') ? document.getElementById('specifics').value : '');
+          formData.append('dietary', document.getElementById('dietary') ? document.getElementById('dietary').value : '');
+
+          fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
+          .then(() => {
+            alert('Reservation submitted successfully!');
+            bookingForm.reset();
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = 'Confirm Reservation Request'; }
+          })
+          .catch(error => {
+            alert('Submission failed. Please try again.');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerText = 'Confirm Reservation Request'; }
+          });
+        });
+      }
+
+      // 2. Catering Quote 提交逻辑
+      const quoteForm = document.getElementById('quoteForm');
+      const quoteSubmitBtn = document.getElementById('quoteSubmitBtn');
+
+      if (quoteForm) {
+        quoteForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (quoteSubmitBtn) { quoteSubmitBtn.disabled = true; quoteSubmitBtn.innerText = 'Submitting...'; }
+
+          const formData = new FormData();
+          formData.append('type', 'quote');
+          formData.append('name', document.getElementById('quoteName').value);
+          formData.append('email', document.getElementById('quoteEmail').value);
+          formData.append('phone', document.getElementById('quotePhone') ? document.getElementById('quotePhone').value : '');
+          formData.append('details', document.getElementById('quoteDetails') ? document.getElementById('quoteDetails').value : '');
+
+          fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
+          .then(() => {
+            alert('Thank you! Your quote request has been submitted. We will get back to you shortly.');
+            quoteForm.reset();
+            if (quoteSubmitBtn) { quoteSubmitBtn.disabled = false; quoteSubmitBtn.innerText = 'Submit Quote Request'; }
+          })
+          .catch(error => {
+            alert('Submission failed. Please try again.');
+            if (quoteSubmitBtn) { quoteSubmitBtn.disabled = false; quoteSubmitBtn.innerText = 'Submit Quote Request'; }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
